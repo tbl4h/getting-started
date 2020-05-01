@@ -1,3 +1,10 @@
-<p>
-  product-details works!
-</p>
+<h2>Product Details</h2>
+<!-- Import product data from class property -->
+<!-- probably redundant derective *ngIf -->
+<div *ngIf="product">
+  <h3>{{ product.name }}</h3>
+  <h4>{{ product.price | currency }}</h4>
+  <p>{{ product.description }}</p>
+<!-- Invoke addToCart method from class and pass product property from calss-->
+  <button (click)="addToCart(product)">Buy</button>
+</div>
